@@ -1,8 +1,8 @@
 import type { PropsWithChildren } from "react";
 
-type IContainer = PropsWithChildren;
+type TContainer = PropsWithChildren;
 
-function Container({ children }: IContainer) {
-  return <div className="container mx-20">{children}</div>;
+function Container({ children }: TContainer) {
+  return <div className="container mx-auto">{children}</div>;
 }
 export default Container;
