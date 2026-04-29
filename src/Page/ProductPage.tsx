@@ -1,9 +1,10 @@
 import Container from "../Components/container/container";
+import Button from "../Components/Button/Button";
 function ProductPage() {
   return (
     <>
       <Container>
-        <div className="grid grid-cols-12">
+        <div className="grid grid-cols-12 mb-52">
           <div className="col-span-3  mt-12 ">
             <img
               className="rounded-lg hover:shadow-blue-700 shadow-2xl"
@@ -36,9 +37,12 @@ function ProductPage() {
               tempore error repellat eos quo explicabo illo sapiente fugiat
             </p>
             <div className="text-center mt-8">
-              <button className="bg-sky-200 w-96 py-2 rounded-md border-blue-600 border-2 hover:bg-blue-600 hover:border-sky-300 hover:text-white">
+              <Button
+                onClick={() => alert("به سبد خرید اضافه شد")}
+                Variant="sucsses"
+              >
                 اضافه کردن
-              </button>
+              </Button>
             </div>
           </div>
         </div>

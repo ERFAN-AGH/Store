@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Container from "../container/container";
+import Button from "../Button/Button";
 function Navbar() {
   return (
     <>
@@ -14,7 +15,11 @@ function Navbar() {
                 <Link to="/Store">فروشگاه</Link>
               </li>
             </ul>
-            <div>سبد خرید</div>
+            <div>
+              <Link to="/Cart">
+                <Button>سبد خرید</Button>
+              </Link>
+            </div>
           </div>
         </Container>
       </div>
