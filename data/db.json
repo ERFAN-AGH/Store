@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Shadow",
+      "Price": "250$",
+      "image": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/heroes/social/nevermore.jpg",
+      "description": "Shadow Fiend is a ranged agility hero who excels at dealing high amounts of magical damage. He is known for his powerful ultimate ability, Requiem of Souls, which can devastate enemy teams in team fights. Shadow Fiend's playstyle revolves around farming and building up his souls to increase his damage output. He is often played as a carry hero in the mid lane, where he can quickly farm and become a formidable threat in the late game."
+    },
+    {
+      "id": "2",
+      "title": "Phantom",
+      "Price": "200$",
+      "image": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/heroes/social/phantom_assassin.jpg",
+      "description": "Phantom Assassin is a ranged agility hero known for her high damage output and ability to deal critical strikes. She excels at picking off isolated enemies and can be a significant threat in the late game."
+    },
+    {
+      "id": "3",
+      "title": "LichKingh",
+      "Price": "150$",
+      "image": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/heroes/social/lich.jpg",
+      "description": "Lich is a ranged intelligence hero known for his powerful necromantic abilities and his ability to control the dead. He is a versatile hero who can be played in various roles, from a support hero to a damage dealer."
+    },
+    {
+      "id": "4",
+      "title": "Slark",
+      "Price": "200$",
+      "image": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/heroes/social/slark.jpg",
+      "description": "Slark is a melee agility hero known for his high mobility and ability to deal significant damage in close combat. He excels at initiating fights and can be a formidable threat in the late game."
+    },
+    {
+      "id": "5",
+      "title": "Admiral",
+      "Price": "240$",
+      "image": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/heroes/social/kunkka.jpg",
+      "description": "Admiral is a ranged intelligence hero known for his strong presence in team fights and his ability to control the battlefield. He is a versatile hero who can be played in various roles, from a support hero to a damage dealer."
+    },
+    {
+      "id": "6",
+      "title": "Lion",
+      "Price": "100$",
+      "image": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/heroes/social/lion.jpg",
+      "description": "Lion is a ranged intelligence hero known for his powerful elemental abilities and his ability to control the battlefield. He is a versatile hero who can be played in various roles, from a support hero to a damage dealer."
+    },
+    {
+      "id": "7",
+      "title": "Invoker",
+      "Price": "300$",
+      "image": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/heroes/social/invoker.jpg",
+      "description": "Invoker is a ranged intelligence hero known for his ability to cast multiple spells simultaneously and his powerful ultimate ability, Deafening Blast. He is a versatile hero who can be played in various roles, from a support hero to a damage dealer."
+    },
+    {
+      "id": "8",
+      "title": "Doom",
+      "Price": "200$",
+      "image": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/heroes/social/doom_bringer.jpg",
+      "description": "Doom is a ranged intelligence hero known for his powerful ultimate ability, Doom, and his ability to deal significant damage over time. He is a versatile hero who can be played in various roles, from a support hero to a damage dealer."
+    }
+  ]
+}

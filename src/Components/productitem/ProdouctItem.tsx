@@ -1,24 +1,19 @@
-function ProductItem() {
+import type { Root2 } from "./../../Types/TypeProduct";
+type Props = Root2;
+
+function ProductItem({ title, Price, image, description }: Props) {
   return (
     <>
       <div className=" shadow-blue-200 shadow border-2 rounded-md  hover:shadow-blue-500">
         <div>
-          <img
-            className="rounded-md"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxj0YyiD-7wGfcHVHDv7omRUggpXDlnyWo1g&s"
-            alt=""
-          />
+          <img className="rounded-md" src={image} alt="" />
         </div>
-        <div className="flex flex-row-reverse justify-between mt-3 p-2">
-          <h4>عنوان محصول</h4>
-          <p>قیمت :$100</p>
+        <div className="flex justify-between mt-3 p-2">
+          <h4>{title}</h4>
+          <p>{Price}</p>
         </div>
         <div className="mt-4 line-clamp-2 px-2 mb-2">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Necessitatibus temporibus, hic odit in sit error repellendus
-            asperiores officiis quaerat quibusdam.
-          </p>
+          <p>{description}</p>
         </div>
       </div>
     </>
