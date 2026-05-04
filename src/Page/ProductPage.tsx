@@ -2,13 +2,14 @@ import Container from "../Components/container/container";
 import Button from "../Components/Button/Button";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getProductItem } from "../servers/server";
-import type { Root2 } from "../Types/TypeProduct";
+import { getPtoduct } from "../servers/server";
+import { Root2 } from "./../Types/TypeProduct";
+
 function ProductPage() {
-  const [product, setProduct] = useState<Root2>();
   const promis = useParams<{ id: string }>();
+  const [product, setProduct] = useState<Root2>();
   useEffect(() => {
-    getProductItem(promis.id as string).then((res) => {
+    getPtoduct(promis.id as string).then((res) => {
       setProduct(res);
     });
   }, [promis.id]);
@@ -25,8 +26,8 @@ function ProductPage() {
           </div>
           <div className="col-span-9 mt-12 text-right">
             <h3>{product?.title}</h3>
-            <p className="mt-5">{product?.Price}</p>
             <p className="mt-5">{product?.description}</p>
+            <p className="mt-5">{product?.Price}</p>
             <div className="text-center mt-8">
               <Button
                 onClick={() => alert("به سبد خرید اضافه شد")}
