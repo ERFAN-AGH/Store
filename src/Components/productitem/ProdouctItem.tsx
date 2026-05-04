@@ -1,12 +1,13 @@
-import type { Root2 } from "./../../Types/TypeProduct";
-type Props = Root2;
+import type { Root2 } from "../../Types/TypeProduct";
 
-function ProductItem({ title, Price, image, description }: Props) {
+type props = Root2;
+
+function ProductItem({ image, title, Price, description }: props) {
   return (
     <>
       <div className=" shadow-blue-200 shadow border-2 rounded-md  hover:shadow-blue-500">
         <div>
-          <img className="rounded-md" src={image} alt="" />
+          <img className="rounded-md" src={image} alt={title} />
         </div>
         <div className="flex justify-between mt-3 p-2">
           <h4>{title}</h4>

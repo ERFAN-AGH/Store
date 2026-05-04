@@ -3,5 +3,6 @@ export interface Root2 {
   title: string;
   Price: string;
   image: string;
+
   description: string;
 }
