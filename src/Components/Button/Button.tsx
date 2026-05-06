@@ -39,6 +39,7 @@ function changeVariant(Variant?: TVariant) {
       color: "white",
       padding: "5px 10px",
       border: "1px solid black",
+      borderRadius: "5px",
     };
   }
   if (Variant === "sucsses") {

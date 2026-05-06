@@ -3,16 +3,26 @@ import Button from "../Components/Button/Button";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getPtoduct } from "../servers/server";
-import { Root2 } from "./../Types/TypeProduct";
+import type { Root2 } from "./../Types/TypeProduct.ts";
+import { useShopCaretContext } from "../Components/context/ShopCaretContext.tsx";
 
 function ProductPage() {
-  const promis = useParams<{ id: string }>();
+  const {
+    cartItems,
+    handleIncreaseProductQty,
+    handleDecreaseProductQty,
+    getProductQty,
+  } = useShopCaretContext();
+
+  const params = useParams<{ id: string }>();
   const [product, setProduct] = useState<Root2>();
   useEffect(() => {
-    getPtoduct(promis.id as string).then((res) => {
+    getPtoduct(params.id as string).then((res) => {
       setProduct(res);
     });
-  }, [promis.id]);
+  }, [params.id]);
+  console.log(cartItems);
+
   return (
     <>
       <Container>
@@ -30,10 +40,21 @@ function ProductPage() {
             <p className="mt-5">{product?.Price}</p>
             <div className="text-center mt-8">
               <Button
-                onClick={() => alert("به سبد خرید اضافه شد")}
                 Variant="sucsses"
+                onClick={() =>
+                  handleIncreaseProductQty(parseInt(params.id as string))
+                }
               >
                 اضافه کردن
+              </Button>
+              {getProductQty(parseInt(params.id as string))}
+              <Button
+                Variant="denger"
+                onClick={() =>
+                  handleDecreaseProductQty(parseInt(params.id as string))
+                }
+              >
+                کم کردن
               </Button>
             </div>
           </div>

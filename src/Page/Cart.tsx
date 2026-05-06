@@ -2,10 +2,7 @@ import CartItam from "../Components/CartItem/CartIte";
 import Container from "../Components/container/container";
 import Button from "../Components/Button/Button";
 
-import { useShopCaretContext } from "../Components/context/ShopCaretContext";
-
 function Cart() {
-  const { cartItems } = useShopCaretContext();
   return (
     <Container>
       <div className="mb-32">
