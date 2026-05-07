@@ -14,6 +14,8 @@ type ShopCaretContextType = {
   handleIncreaseProductQty: (id: number) => void;
   handleDecreaseProductQty: (id: number) => void;
   getProductQty: (id: number) => number;
+  handleRemvoeProductItem: (id: number) => void;
+  cartQty: number;
 };
 
 export const ShopCaretContext = createContext({} as ShopCaretContextType);
@@ -64,7 +66,10 @@ export default function ShopCaretContextProvider({
   const getProductQty = (id: number) => {
     return cartItems.find((item) => item.id === id)?.qty || 0;
   };
-
+  const handleRemvoeProductItem = (id: number) => {
+    setCartItems((currnteItem) => currnteItem.filter((item) => item.id !== id));
+  };
+  const cartQty = cartItems.reduce((totalQty, item) => totalQty + item.qty, 0);
   return (
     <ShopCaretContext.Provider
       value={{
@@ -72,6 +77,8 @@ export default function ShopCaretContextProvider({
         handleIncreaseProductQty,
         handleDecreaseProductQty,
         getProductQty,
+        handleRemvoeProductItem,
+        cartQty,
       }}
     >
       {children}

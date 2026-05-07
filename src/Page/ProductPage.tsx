@@ -12,6 +12,7 @@ function ProductPage() {
     handleIncreaseProductQty,
     handleDecreaseProductQty,
     getProductQty,
+    handleRemvoeProductItem,
   } = useShopCaretContext();
 
   const params = useParams<{ id: string }>();
@@ -33,30 +34,54 @@ function ProductPage() {
               src={product?.image}
               alt={product?.title}
             />
+            <div className="text-center mt-8">
+              {getProductQty(parseInt(params.id as string)) === 0 ? (
+                <Button
+                  Variant="praimrey"
+                  onClick={() =>
+                    handleIncreaseProductQty(parseInt(params.id as string))
+                  }
+                >
+                  اضافه کردن
+                </Button>
+              ) : (
+                <>
+                  <div className="text-center mt-8">
+                    <Button
+                      Variant="sucsses"
+                      onClick={() =>
+                        handleIncreaseProductQty(parseInt(params.id as string))
+                      }
+                    >
+                      +
+                    </Button>
+                    {getProductQty(parseInt(params.id as string))}
+                    <Button
+                      Variant="warning"
+                      onClick={() =>
+                        handleDecreaseProductQty(parseInt(params.id as string))
+                      }
+                    >
+                      -
+                    </Button>
+                  </div>
+                  <Button
+                    className="mt-3"
+                    Variant="denger"
+                    onClick={() =>
+                      handleRemvoeProductItem(parseInt(params.id as string))
+                    }
+                  >
+                    حذف کردن
+                  </Button>
+                </>
+              )}
+            </div>
           </div>
           <div className="col-span-9 mt-12 text-right">
             <h3>{product?.title}</h3>
             <p className="mt-5">{product?.description}</p>
             <p className="mt-5">{product?.Price}</p>
-            <div className="text-center mt-8">
-              <Button
-                Variant="sucsses"
-                onClick={() =>
-                  handleIncreaseProductQty(parseInt(params.id as string))
-                }
-              >
-                اضافه کردن
-              </Button>
-              {getProductQty(parseInt(params.id as string))}
-              <Button
-                Variant="denger"
-                onClick={() =>
-                  handleDecreaseProductQty(parseInt(params.id as string))
-                }
-              >
-                کم کردن
-              </Button>
-            </div>
           </div>
         </div>
       </Container>

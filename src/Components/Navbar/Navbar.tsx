@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import Container from "../container/container";
 import Button from "../Button/Button";
+import { useShopCaretContext } from "../context/ShopCaretContext";
 function Navbar() {
+  const { cartQty } = useShopCaretContext();
   return (
     <>
       <div className=" flex justify-between border-b-0 items-center border-blue-300 bg-sky-300 shadow-blue-200 shadow-md h-14 ">
@@ -18,6 +20,7 @@ function Navbar() {
             <div>
               <Link to="/Cart">
                 <Button>سبد خرید</Button>
+                <span>{cartQty}</span>
               </Link>
             </div>
           </div>
