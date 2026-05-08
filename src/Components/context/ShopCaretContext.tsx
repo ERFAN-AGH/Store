@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
+import { useLocaleStorge } from "./../hooks/useLocalStorage";
 
 type ShopCaretProviderType = {
   children: React.ReactNode;
@@ -27,7 +28,10 @@ export function useShopCaretContext() {
 export default function ShopCaretContextProvider({
   children,
 }: ShopCaretProviderType) {
-  const [cartItems, setCartItems] = useState<CartItemType[]>([]);
+  const [cartItems, setCartItems] = useLocaleStorge<CartItemType[]>(
+    "cartItems",
+    [],
+  );
 
   const handleIncreaseProductQty = (id: number) => {
     setCartItems((currentItems) => {
@@ -36,7 +40,7 @@ export default function ShopCaretContextProvider({
         return [...currentItems, { id: id, qty: 1 }];
       } else {
         return cartItems.map((item) => {
-          if (item) {
+          if (item.id === id) {
             return { ...item, qty: item.qty + 1 };
           } else {
             return item;
@@ -53,7 +57,7 @@ export default function ShopCaretContextProvider({
         return currentItem.filter((item) => item.id !== id);
       } else {
         return currentItem.map((item) => {
-          if (item) {
+          if (item.id === id) {
             return { ...item, qty: item.qty - 1 };
           } else {
             return item;

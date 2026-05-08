@@ -1,15 +1,17 @@
 import CartItam from "../Components/CartItem/CartIte";
 import Container from "../Components/container/container";
 import Button from "../Components/Button/Button";
+import { useShopCaretContext } from "../Components/context/ShopCaretContext";
 
 function Cart() {
+  const { cartItems } = useShopCaretContext();
   return (
     <Container>
       <div className="mb-32">
         <div>
-          <CartItam />
-          <CartItam />
-          <CartItam />
+          {cartItems.map((item) => (
+            <CartItam {...item} key={item.id} />
+          ))}
         </div>
         <div className="mt-7 bg-slate-300 text-right p-4 rounded-md">
           <p>قیمت کل:$1000</p>

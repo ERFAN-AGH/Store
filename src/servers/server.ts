@@ -9,7 +9,7 @@ export async function getProducts() {
   return data;
 }
 
-export async function getPtoduct(id: string) {
+export async function getPtoduct(id: string | number) {
   const { data } = await client.get(`/posts/${id}`);
   return data;
 }
