@@ -3,7 +3,7 @@ import Container from "../container/container";
 import Button from "../Button/Button";
 import { useShopCaretContext } from "../context/ShopCaretContext";
 function Navbar() {
-  const { cartQty } = useShopCaretContext();
+  const { cartQty, handelLogOut } = useShopCaretContext();
   return (
     <>
       <div className=" flex justify-between border-b-0 items-center border-blue-300 bg-sky-300 shadow-blue-200 shadow-md h-14 ">
@@ -15,6 +15,9 @@ function Navbar() {
               </li>
               <li className=" hover:text-white hover:underline ">
                 <Link to="/Store">فروشگاه</Link>
+              </li>
+              <li onClick={handelLogOut} style={{ cursor: "pointer" }}>
+                خروج
               </li>
             </ul>
             <div>

@@ -3,39 +3,32 @@ import Button from "../Button/Button";
 import { getPtoduct } from "../../servers/server";
 import type { Root2 } from "../../Types/TypeProduct";
 import { useShopCaretContext } from "../context/ShopCaretContext";
-import { Link } from "react-router-dom";
 
 type cartItemsType = {
   id: number;
   qty: number;
 };
-
 function CartItam({ id, qty }: cartItemsType) {
-  const [praduct, setPraduct] = useState<Root2>();
-
+  const [product, setProduct] = useState<Root2>();
   useEffect(() => {
-    getPtoduct(id).then((data) => {
-      setPraduct(data);
-    });
+    getPtoduct(id).then((data) => setProduct(data));
   }, [id]);
 
   const {
     handleDecreaseProductQty,
-    handleIncreaseProductQty,
     handleRemvoeProductItem,
+    handleIncreaseProductQty,
   } = useShopCaretContext();
   return (
     <>
       <div className="flex flex-row-reverse text-right mt-5">
         <div className="">
-          <Link to={`/ProductPage/${id}`}>
-            {" "}
-            <img className="rounded-md" src={praduct?.image} alt="" />
-          </Link>
+          {" "}
+          <img className="rounded-md" src={product?.image} alt="" />
         </div>
         <div className="mr-5">
-          <h3 className="font-black">{praduct?.title} </h3>
-          <p className="opacity-70">{praduct?.description}</p>
+          <h3 className="font-black">{product?.title} </h3>
+          <p className="opacity-70">{product?.description}</p>
           <div className="flex mt-5 ">
             <Button
               Variant="denger"

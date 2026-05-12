@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 
-export function useLocaleStorge<T>(key: string, initialValue: T) {
+export function useLocalStorage<T>(key: string, initValue: T) {
   const [value, setValue] = useState<T>(() => {
-    const localCart = localStorage.getItem("cartItems");
-    if (localCart != null) {
-      return JSON.parse(localCart);
+    const localCarts = localStorage.getItem("cartItems");
+    if (localCarts != null) {
+      return JSON.parse(localCarts);
     } else {
-      return initialValue;
+      return initValue;
     }
   });
 
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
+    return localStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
   return [value, setValue] as [typeof value, typeof setValue];
 }
